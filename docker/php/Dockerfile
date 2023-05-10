@@ -7,6 +7,7 @@ ENV \
     PECL_EXTENSIONS="redis" \
     PHP_EXTENSIONS="bcmath pdo pdo_mysql sockets"
 
+
 RUN \
   apk update \
       && apk add autoconf g++ make \
@@ -21,6 +22,7 @@ RUN \
       && mkdir /usr/local/etc/php/conf.d/disabled \
       && echo "Install Composer" \
       && curl -sSL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 
 
 COPY ./php.ini /usr/local/etc/php/php.ini

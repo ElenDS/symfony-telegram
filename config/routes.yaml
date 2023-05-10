@@ -3,3 +3,27 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+api_add_quiz:
+    path:       /api/quiz
+    controller: App\Controller\QuizController::postQuiz
+    methods:    POST
+
+api_create_report:
+    path:       /api/create-report
+    controller: App\Controller\ReportController::generateReport
+    methods:    GET
+
+api_get_report_status:
+    path:       /api/get-report-status/{filename}
+    controller: App\Controller\ReportController::getReportStatus
+    methods:    GET
+
+get_report:
+    path:       /get-report/{filename}
+    controller: App\Controller\ReportController::getReport
+    methods:    GET
+
+
+
+

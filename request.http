@@ -1,0 +1,42 @@
+POST http://symf.localhost/api/quiz
+Accept: application/json
+Content-type: application/json
+
+{
+  "task": "100/100",
+  "correct_answer": "1",
+  "type": "math",
+  "incorrect_answers": [
+    "10000",
+    "333",
+    "0"
+  ]
+}
+###
+
+POST http://symf.localhost/api/quiz
+Accept: application/json
+Content-type: application/json
+
+{
+  "task": "What season is it now?",
+  "correct_answer": "spring",
+  "type": "theoretic",
+  "incorrect_answers": [
+    "summer",
+    "winter",
+    "season of love"
+  ]
+}
+
+###
+
+GET http://symf.localhost/api/create-report
+Accept: application/json
+Content-type: application/json
+
+###
+
+GET http://symf.localhost/api/get-report-status/{filename}
+Accept: application/json
+Content-type: application/json
