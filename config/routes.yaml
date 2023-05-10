@@ -12,7 +12,7 @@ api_add_quiz:
 api_create_report:
     path:       /api/create-report
     controller: App\Controller\ReportController::generateReport
-    methods:    GET
+    methods:    POST
 
 api_get_report_status:
     path:       /api/get-report-status/{filename}

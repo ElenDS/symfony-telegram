@@ -29,13 +29,14 @@ class ReportController extends AbstractController
 
         return new JsonResponse('Report will be created with the name ' . $fileName);
     }
+
     #[Route("/api/get-report/{filename}")]
-    public  function getReport(string $filename): JsonResponse|Response
+    public function getReport(string $filename): JsonResponse|Response
     {
         $filePath = sprintf('../%s.csv', $filename);
         $filesystem = new Filesystem();
 
-        if($filesystem->exists($filePath)){
+        if ($filesystem->exists($filePath)) {
             $response = new Response(file_get_contents($filePath));
             $response->headers->set('Content-Type', 'text/csv');
             $response->headers->set('Content-Disposition', 'attachment; filename=' . $filePath);
@@ -45,12 +46,13 @@ class ReportController extends AbstractController
 
         return new JsonResponse('The file does not exist');
     }
+
     #[Route("/api/get-report-status/{filename}")]
     public function getReportStatus(string $filename): JsonResponse
     {
         $file = $this->reportRepository->findOneBy(['file_name' => $filename]);
 
-        if(!$file){
+        if (!$file) {
             $status = 'not found';
         } else {
             $status = $file->getStatus();
