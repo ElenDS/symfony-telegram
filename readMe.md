@@ -4,6 +4,15 @@ There is an option to add new quizzes via an API, and also to receive an active 
 
 # What inside
 
+Symfony
+
+MySQL
+
+Docker Compose
+
+
+# How to use
+
 The project uses the library https://github.com/php-telegram-bot/core
 
 **Telegram bot commands:**
